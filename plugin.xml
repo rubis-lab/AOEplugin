@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension
+         point="org.eclipse.graphiti.ui.diagramTypes">
+      <diagramType
+            name="ActorOriented Diagram Type"
+            type="actorOriented"
+            id="actorOriented.actorOrientedDiagramType">
+      </diagramType>
+   </extension>
+   <extension
+         point="org.eclipse.graphiti.ui.diagramTypeProviders">
+      <diagramTypeProvider
+            name="ActorOriented Diagram Type Provider"
+            class="org.eclipse.actor.oriented.diagram.ActorOrientedDiagramTypeProvider"
+            id="actorOriented.actorOrientedDiagramTypeProvider">
+         <diagramType
+               id="actorOriented.actorOrientedDiagramType">
+         </diagramType>
+      </diagramTypeProvider>
+   </extension>
+   <extension
+         point="org.eclipse.ui.views.properties.tabbed.propertyContributor">
+      <propertyContributor
+            contributorId="actorOriented.PropertyContributor">
+         <propertyCategory
+               category="AO"></propertyCategory>
+      </propertyContributor>
+   </extension>
+   <extension
+         point="org.eclipse.ui.views.properties.tabbed.propertySections">
+      <propertySections
+            contributorId="actorOriented.PropertyContributor">
+         <propertySection
+               class="org.eclipse.actor.oriented.property.AOEClassSection"
+               filter="org.eclipse.actor.oriented.property.AOEClassFilter"
+               id="ao.main.tab.emfclass"
+               tab="ao.main.tab">
+         </propertySection>
+      </propertySections>
+   </extension>
+   <extension
+         point="org.eclipse.ui.views.properties.tabbed.propertyTabs">
+      <propertyTabs
+            contributorId="actorOriented.PropertyContributor">
+         <propertyTab
+               category="AO"
+               id="ao.main.tab"
+               label="Main">
+         </propertyTab>
+      </propertyTabs>
+   </extension>
+</plugin>
